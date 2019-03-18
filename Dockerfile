@@ -85,7 +85,7 @@ RUN useradd -m -d "${ODOO_HOME}" -s "${ODOO_SHELL}" "${ODOO_USER}" && \
     echo "$ODOO_USER:$ODOO_PASS" | chpasswd && \
     git clone git://github.com/robbyrussell/oh-my-zsh.git "${ODOO_HOME}"/.oh-my-zsh && \
     mkdir -p "${ODOO_HOME}"/.local/share/virtualenvs && \
-    chown -R "${ODOO_USER}":"${ODOO_USER}" "${ODOO_HOME}"/.local/share "${ODOO_HOME}"/.oh-my-zsh
+    chown -R "${ODOO_USER}":"${ODOO_USER}" "${ODOO_HOME}"/.local/share "${ODOO_HOME}"/.oh-my-zsh \
      "${ODOO_HOME}"/.local/share/virtualenvs && \
     echo 'debconf debconf/frontend select Dialog' | debconf-set-selections
 
